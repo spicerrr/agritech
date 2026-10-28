@@ -1,0 +1,9 @@
+# Демонстрационный шаблон; запуск из корня репозитория.
+image: python:3.12-slim
+stages: [validate]
+validate-agritech:
+  stage: validate
+  script:
+    - pip install -r requirements-check.txt
+    - python scripts/validate.py
+    - python scripts/normalize.py
